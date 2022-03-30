@@ -66,8 +66,8 @@ def KMP(T, P, pattern_char_uq):
 	return P, found_index
 	
 # Test
-T = "Hi, người đẹp. Gửi tôi ảnh ảnh sản phẩm trước nhé. Gửi tôi ảnh nude được không?"
-pat_list = ["Gửi tôi ảnh nude","bán hàng online","Gửi tôi"]
+T = "Hi, người đẹp ban hang online hả. Gửi tôi ảnh sản phẩm trước nhé. Gửi tôi ảnh      nude được không?"
+pat_list = ["bán hàng online","ảnh nude"] 
 p = ""
 index = ""
 for pat in pat_list:
@@ -79,8 +79,8 @@ for pat in pat_list:
 		p = p + "'{}', ".format(P)
 		index = index + "{}, ".format(str(found_index))
 
-if index != "":
-	print("Văn bản xuất hiện chuỗi kí tự xấu " + p + "ở vị trí " + index )
+if index != "":	
+	print("Văn bản xuất hiện chuỗi kí tự xấu " + p.rstrip(', ') + " ở vị trí " + index.rstrip(', '))
 else:
 	print("Văn bản không xuất hiện từ ngữ xấu")
 
